@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double fixedCommission, percentCommission, cost, minAdd, maxAdd;
+    double minPrice, maxPrice, minCommission, maxCommission;
+
+    cin >> fixedCommission >> percentCommission >> cost >> minAdd >> maxAdd;
+
+    minPrice = cost + minAdd;
+    maxPrice = cost + maxAdd;
+
+    minCommission = fixedCommission + (minPrice - cost) * (percentCommission / 100.0);
+    maxCommission = fixedCommission + (maxPrice - cost) * (percentCommission / 100.0);
+
+    cout << "Minimum Selling Price: $" << minPrice << endl;
+    cout << "Maximum Selling Price: $" << maxPrice << endl;
+    cout << "Minimum Commission: $" << minCommission << endl;
+    cout << "Maximum Commission: $" << maxCommission << endl;
+
+    return 0;
+}
